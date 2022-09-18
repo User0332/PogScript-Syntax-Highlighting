@@ -1,0 +1,25 @@
+{
+  "name": "pogscript-syntax-highlighting",
+  "displayName": "PogScript Syntax Highlighting",
+  "description": "Basic syntax highlighting for PogScript",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.71.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "pogscript",
+      "aliases": ["PogScript", "pogscript"],
+      "extensions": [".pog",".pogs",".pogl"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "pogscript",
+      "scopeName": "source.pog",
+      "path": "./syntaxes/pogscript.tmLanguage.json"
+    }]
+  }
+}
