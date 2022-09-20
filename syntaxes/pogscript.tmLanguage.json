@@ -7,14 +7,41 @@
 		},
 		{
 			"include": "#strings"
+		},
+		{
+			"include": "#identifiers"
+		},
+		{
+			"include": "#numbers"
+		},
+		{
+			"include": "#comments"
 		}
 	],
 	"repository": {
 		"keywords": {
-			"patterns": [{
-				"name": "keyword.control.pogscript",
-				"match": "\\b(if|while|for|return)\\b"
-			}]
+			"patterns": [
+				{
+					"name": "keyword.control.pogscript",
+					"match": "\\b(if|while|for|return|else|elif)\\b"
+				},
+				{
+					"name": "keyword.other.symbol.datatype.pogscript",
+					"match": "\\b(int|uint|char|float)\\b"
+				},
+				{
+					"name": "keyword.other.symbol.symboltype.pogscript",
+					"match": "\\b(var|ptr|const|func)\\b"
+				},
+				{
+					"name": "keyword.other.special",
+					"match": "\\b(class|namespace|untypechecked)\\b"
+				},
+				{
+					"name": "keyword.other.import.pogscript",
+					"match": "\\b(import|from)\\b"
+				}
+			]
 		},
 		"strings": {
 			"name": "string.quoted.double.pogscript",
@@ -26,7 +53,39 @@
 					"match": "\\\\."
 				}
 			]
+		},
+		"identifiers": {
+			"patterns": [
+				{
+					"name": "entity.name.function.pogscript",
+					"match": "\\b([a-zA-Z_])\\w*[^\\S\n]*\\("
+				},
+				{
+					"name": "variable.name",
+					"match": "\\b[a-zA-Z_]\\w*\\b"
+				}
+			]
+		},
+		"numbers": {
+			"patterns": [
+				{
+					"name": "constant.numeric.integer.pogscript",
+					"match": "\\b\\d+\\b"
+				},
+				{
+					"name": "constant.numeric.float.pogscript",
+					"match": "\\b\\d\\.\\d\\b"
+				}
+			]
+		},
+		"comments": {
+			"patterns": [
+				{
+					"name": "comment",
+					"match": "#.*"
+				}
+			]
 		}
 	},
-	"scopeName": "source.pog"
+	"scopeName": "source.pogscript"
 }
